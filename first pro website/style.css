@@ -1,0 +1,1724 @@
+body {
+  font-family: sans-serif;
+  background-color: #161616;
+  color: white;
+}
+
+* {
+  transition: 0.5s 0s ease;
+}
+
+:root {
+  --mainBackgrounds: linear-gradient(45deg, #c026d3, #7c3aed);
+}
+
+#keys {
+  display: none;
+}
+
+.hugecontainer {
+  position: fixed;
+  z-index: 1000;
+  background-color: #161616;
+  width: 100%;
+  height: 16%;
+  top: 0px;
+}
+
+ul {
+  position: fixed;
+  z-index: 1000;
+}
+
+#logoname {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+  transform: scale(1.2);
+  width: 35px;
+  height: 35px;
+  font-weight: bold;
+  font-size: 23px;
+  background-image: var(--mainBackgrounds);
+}
+
+#logotxt {
+  position: absolute;
+  top: 34px;
+  left: 100px;
+  font-size: 1.3em;
+  font-weight: 550;
+  text-shadow: 0 0 4px rgb(255, 255, 255);
+}
+
+#theinp {
+  width: 650px;
+  height: 40px;
+  position: fixed;
+  left: 24.5%;
+  top: 6.35%;
+  background-color: #616161;
+  border-radius: 5px;
+  color: white;
+  font-size: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+#theinp::placeholder {
+  color: rgb(187, 187, 187);
+  text-indent: 2.5%;
+}
+
+#theinp:focus {
+  border: 2px solid rgb(255, 255, 255);
+  outline: white;
+  border-bottom: none;
+  border-right: none;
+}
+
+#bell {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  position: fixed;
+  top: 6.1%;
+  right: 22%;
+  cursor: pointer;
+  background-image: url(/116389850303ufdx83go2mmx7wz9iodbnh27afxknnf9bofncviac8z2n9w4rwksenu7mwokevjmznxdga1dt7xhiquhtxbvjjjdrqb3pt5rhuk.png);
+}
+
+#bell::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  right: 9px;
+  top: 4px;
+  border: 2px solid #161616;
+}
+
+#accpfp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  top: 6.1%;
+  right: 11%;
+  cursor: pointer;
+}
+
+#options {
+  border: 5px solid white;
+  transform: rotate(45deg);
+  width: 20px;
+  height: 20px;
+  border-top: none;
+  border-left: none;
+  position: fixed;
+  top: 7%;
+  right: 17.5%;
+  cursor: pointer;
+}
+
+#options.active {
+  border: 5px solid white;
+  transform: rotate(223.5deg);
+  border-top: none;
+  border-left: none;
+}
+
+#dshbr {
+  position: absolute;
+  top: 100px;
+  left: 12%;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+
+#moretxt {
+  position: absolute;
+  top: 140px;
+  left: 12%;
+  font-size: 1.3em;
+  opacity: 0.4;
+}
+
+#container {
+  background-image: url(https://assets.codepen.io/3685267/nft-dashboard-art-6.jpg);
+  width: 60%;
+  height: 200px;
+  background-size: cover;
+  border-radius: 10px;
+  position: absolute;
+  top: 200px;
+  left: 12%;
+}
+
+#findect {
+  font-size: 30px;
+  text-indent: 20px;
+  font-weight: bold;
+}
+
+#artwoect {
+  font-size: 30px;
+  text-indent: 20px;
+  font-weight: bold;
+}
+
+#explorebtn {
+  background-image: var(--mainBackgrounds);
+  height: 40px;
+  width: 200px;
+  font-size: 1.3em;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  left: 20px;
+  top: -10px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#Market {
+  display: flex;
+  cursor: pointer;
+  font-weight: bolder;
+  position: fixed;
+  top: 17.5%;
+  font-size: 20px;
+  opacity: 0.4;
+}
+
+#Market.active {
+  opacity: 1;
+  border-bottom: #5500ff 3px solid;
+  text-shadow: 0 0 5px white;
+}
+
+#Market.active::before {
+  content: "";
+  position: absolute;
+  left: -100%;
+  top: -30%;
+  background-color: #5500ff;
+  width: 25px;
+  height: 38px;
+  border-radius: 7px;
+}
+
+#Dashboard {
+  display: inline-block;
+  position: fixed;
+  top: 26.6%;
+  font-size: 20px;
+  font-weight: bolder;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+#Dashboard.active {
+  opacity: 1;
+  text-shadow: 0 0 5px white;
+  border-bottom: #5500ff 3px solid;
+}
+
+#Dashboard.active::before {
+  content: "";
+  position: absolute;
+  left: -61%;
+  top: -30%;
+  background-color: #5500ff;
+  width: 25px;
+  height: 38px;
+  border-radius: 7px;
+}
+
+#Trending {
+  display: flex;
+  position: fixed;
+  top: 35.7%;
+  font-size: 20px;
+  font-weight: bolder;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+#Trending.active {
+  opacity: 1;
+  border-bottom: #5500ff 3px solid;
+  text-shadow: 0 0 5px white;
+}
+
+#Trending.active::before {
+  content: "";
+  position: absolute;
+  left: -75%;
+  top: -30%;
+  background-color: #5500ff;
+  width: 25px;
+  height: 38px;
+  border-radius: 7px;
+}
+
+#Collection {
+  display: flex;
+  position: fixed;
+  top: 44.8%;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+#Collection.active {
+  opacity: 1;
+  border-bottom: #5500ff 3px solid;
+  text-shadow: 0 0 5px white;
+}
+
+#Collection.active::before {
+  content: "";
+  position: absolute;
+  left: -66%;
+  top: -30%;
+  background-color: #5500ff;
+  width: 25px;
+  height: 38px;
+  border-radius: 7px;
+}
+
+#Wallet {
+  display: flex;
+  position: fixed;
+  top: 53.9%;
+  font-size: 20px;
+  font-weight: bolder;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+#Wallet.active {
+  opacity: 1;
+  border-bottom: #5500ff 3px solid;
+  text-shadow: 0 0 5px white;
+}
+
+#Wallet.active::before {
+  content: "";
+  position: absolute;
+  left: -108%;
+  top: -30%;
+  background-color: #5500ff;
+  width: 25px;
+  height: 38px;
+  border-radius: 7px;
+}
+
+#settings {
+  display: none;
+  position: absolute;
+  width: 241px;
+  height: 173px;
+  background-color: rgb(44 45 78 / 57%);
+  backdrop-filter: blur(20px);
+  top: 100px;
+  right: 268px;
+  text-indent: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#settings.active {
+  display: flex;
+  opacity: 1;
+  position: fixed;
+  z-index: 5000;
+}
+
+.firstsetting {
+  position: absolute;
+  top: 5px;
+  left: 0px;
+  width: 100%;
+  height: 20%;
+}
+
+.secondsetting {
+  position: absolute;
+  top: 41px;
+  left: 0px;
+  width: 100%;
+  height: 20%;
+}
+
+.thirdsetting {
+  position: absolute;
+  top: 76px;
+  left: 0px;
+  width: 100%;
+  height: 20%;
+}
+
+.fourthsetting {
+  position: absolute;
+  top: 109px;
+  left: 0px;
+  width: 100%;
+  height: 20%;
+}
+
+.fifthsetting {
+  position: absolute;
+  top: 142px;
+  left: 0px;
+  width: 100%;
+  height: 20%;
+}
+
+hr {
+  width: 100%;
+  border: none;
+  height: 34.6px;
+  background-color: #494949e6;
+  transform: translateY(-12px);
+  background-color: transparent;
+}
+
+.firsthr {
+  position: absolute;
+  top: -1px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 0px;
+  height: 36.5px;
+}
+
+.firsthr:hover {
+  background-color: #ffffff1f;
+}
+
+.secondhr {
+  position: absolute;
+  top: 0px;
+}
+
+.secondhr:hover {
+  background-color: #ffffff1f;
+}
+
+.thirdhr {
+  position: absolute;
+  top: 0px;
+}
+
+.thirdhr:hover {
+  background-color: #ffffff1f;
+}
+
+.fourthhr {
+  position: absolute;
+  top: 0px;
+}
+
+.fourthhr:hover {
+  background-color: #ffffff1f;
+}
+
+.fifthHr {
+  position: absolute;
+  top: 0px;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.fifthHr:hover {
+  background-color: #ffffff1f;
+}
+
+#anything {
+  width: 250px;
+  height: 40px;
+  background-color: rgb(44 45 78 / 57%);
+  backdrop-filter: blur(20px);
+  border-top-right-radius: 15px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  top: 100px;
+  position: absolute;
+  right: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  display: none;
+}
+
+#anything.actv {
+  opacity: 1;
+  display: flex;
+  z-index: 5000000;
+  position: fixed;
+}
+
+.trndart {
+  position: absolute;
+  top: 450px;
+  font-size: 20px;
+  left: 12%;
+  font-weight: bold;
+}
+
+.first.ArtContainer {
+  position: absolute;
+  top: 76%;
+  left: 12%;
+}
+
+.ArtContainer {
+  width: 315px;
+  height: 400px;
+  background-color: rgb(43 43 43 / 60%);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+}
+
+.second.ArtContainer {
+  position: absolute;
+  top: 76%;
+  left: 35.5%;
+}
+
+.third.ArtContainer {
+  position: absolute;
+  top: 76%;
+  left: 59%;
+}
+
+.fourth.ArtContainer {
+  position: absolute;
+  bottom: -94%;
+  left: 12%;
+}
+
+.fifth.ArtContainer {
+  position: absolute;
+  bottom: -94%;
+  left: 35.5%;
+}
+
+.sixth.ArtContainer {
+  position: absolute;
+  bottom: -94%;
+  left: 59%;
+}
+
+.art {
+  width: 315px;
+  height: 205px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+}
+
+.art.one {
+  background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-0.jpg");
+  background-size: cover;
+}
+
+.art.two {
+  background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-1.jpg");
+}
+
+.art.three {
+  background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-2.jpg");
+}
+
+.art.four {
+  background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-3.jpg");
+}
+
+.art.five {
+  background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-4.jpg");
+}
+
+.art.six {
+  background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-5.jpg");
+}
+
+.num1cont {
+  position: absolute;
+  left: 30px;
+  bottom: 20px;
+  width: 270px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  line-height: 40px;
+  text-indent: 10px;
+  font-size: 20px;
+}
+
+#endingcont {
+  position: absolute;
+  right: 45px;
+}
+
+#endingtime {
+  position: absolute;
+  right: 14px;
+  font-weight: 100;
+}
+
+.theimage01 {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  left: -5px;
+  position: absolute;
+  top: 170px;
+}
+
+.txt01 {
+  font-size: 23px;
+  position: absolute;
+  left: -12px;
+  top: 100px;
+}
+
+.userID01 {
+  position: absolute;
+  top: 155px;
+  left: 45px;
+  font-size: 16px;
+  color: gray;
+}
+
+.placeBid {
+  position: absolute;
+  cursor: pointer;
+  top: 250px;
+  left: -10px;
+  width: 125px;
+  height: 50px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid rgb(232, 0, 253);
+  background-image: var(--mainBackgrounds);
+  color: white;
+  font-weight: 700;
+}
+
+.placeBid:hover {
+  box-shadow: 0 0 20px 0px rgb(232, 0, 253);
+}
+
+.ViewArt {
+  width: 128px;
+  height: 50px;
+  top: 250px;
+  right: 5px;
+  transition: 0.5s 0s ease;
+  position: absolute;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 10px;
+  border: 2px solid;
+  color: white;
+  font-weight: 700;
+  background-color: transparent;
+  border-top-color: #c026d3;
+  border-left-color: #c026d3;
+  border-bottom-color: #7c3aed;
+  border-right-color: #7c3aed;
+}
+
+.ViewArt:hover {
+  box-shadow: 0 0 20px 0px #5e00ff;
+}
+
+#artists {
+  width: 45%;
+  position: fixed;
+  right: -50%;
+  top: 20%;
+  height: 102%;
+}
+
+.artistspfps {
+  width: 60px;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+
+.artistsTag {
+  font-size: 16px;
+  color: gray;
+  position: relative;
+  bottom: 30px;
+  left: 78px;
+}
+
+.artistSideName {
+  position: relative;
+  bottom: 30px;
+  left: 15px;
+  font-weight: bold;
+}
+
+.artistnum1 {
+  background-color: #3b3b3b6b;
+  border-radius: 10px;
+  position: relative;
+  right: 10px;
+  margin-top: 10px;
+}
+
+.topArtists {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bidplaced {
+  position: fixed;
+  width: 700px;
+  height: 400px;
+  background-color: #000000ba;
+  top: 24%;
+  left: 28%;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.bidplaced.activated {
+  visibility: visible;
+  opacity: 1;
+}
+
+.bidinput {
+  width: 56%;
+  height: 30px;
+  background-color: #ffffff3b;
+  border-radius: 10px;
+  border: 1px solid white;
+  border-right: none;
+  border-bottom: none;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  color: white;
+  font-size: 20px;
+  text-indent: 5%;
+}
+
+.bidinput:focus-visible {
+  border: 2px solid white;
+  outline: none;
+}
+
+.bidinput::placeholder {
+  color: rgb(187, 187, 187);
+  text-indent: 2.5%;
+  font-size: 20px;
+}
+
+#confirming {
+  width: 130px;
+  height: 50px;
+  color: white;
+  font-size: 26px;
+  background-image: var(--mainBackgrounds);
+  border-radius: 15px;
+  border: 2px solid #e233ff;
+  border-bottom: orange;
+  border-right: orange;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+
+#confirming:hover {
+  box-shadow: 0 0 15px 2px #e233ff;
+}
+
+#canceling {
+  width: 130px;
+  height: 50px;
+  color: white;
+  font-size: 26px;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 2px solid #e233ff;
+  border-bottom: 2px solid orange;
+  border-right: 2px solid orange;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+}
+
+#canceling:hover {
+  box-shadow: 0 0 15px 2px #ff6b00;
+}
+
+.msgplace {
+  position: absolute;
+  top: 40%;
+  left: 19%;
+  font-size: 24px;
+  border: 2px solid orange;
+  width: 460px;
+  text-indent: 6%;
+  color: #e233ff;
+  visibility: hidden;
+}
+
+.msgplace.perfect {
+  visibility: visible;
+}
+
+.closing {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-image: url(https://w7.pngwing.com/pngs/698/566/png-transparent-computer-icons-icon-design-close-logo-brand-material-design.png);
+}
+
+.artviewer {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+@media (max-width: 900px) {
+  .hugecontainer {
+    position: fixed;
+    z-index: 1000;
+    background-color: #161616;
+    width: 100%;
+    height: 16%;
+    top: 0px;
+  }
+
+  #keys {
+    width: 50px;
+    height: 50px;
+    background: #000000d1;
+    position: fixed;
+    top: 10.2%;
+    left: 4%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+  }
+
+  #keys.active {
+    z-index: 1000;
+    position: fixed;
+    top: 1%;
+    left: 50%;
+  }
+
+  #keys #key {
+    width: 70%;
+    height: 5px;
+    background-color: white;
+  }
+
+  #keys.active #key:first-child {
+    transform: rotate(45deg) translate(13px, 13px);
+
+  }
+
+  #keys.active #key:nth-child(2) {
+    opacity: 0;
+  }
+
+  #keys.active #key:last-child {
+    transform: rotate(-45deg) translate(11px, -11px);
+  }
+
+  #myul {
+    position: fixed;
+    z-index: 1000;
+    left: -200px;
+  }
+
+  #myul.active {
+    position: fixed;
+    z-index: 1000;
+    left: 10px;
+    width: 196px;
+    height: 781px;
+    background: #000000d1;
+    margin: 0;
+    backdrop-filter: blur(15px);
+  }
+
+  #logoname {
+    position: absolute;
+    top: 68px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 50%;
+    transform: scale(1.2);
+    width: 35px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 23px;
+    background-image: var(--mainBackgrounds);
+  }
+
+  #logotxt {
+    position: absolute;
+    top: 55px;
+    left: 100px;
+    font-size: 1.3em;
+    font-weight: 550;
+    text-shadow: 0 0 4px rgb(255, 255, 255);
+  }
+
+  #theinp {
+    width: 400px;
+    height: 40px;
+    position: fixed;
+    left: 16.5%;
+    top: 10.5%;
+    background-color: #616161;
+    border-radius: 5px;
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  #theinp::placeholder {
+    color: rgb(187, 187, 187);
+    text-indent: 2.5%;
+  }
+
+  #theinp:focus {
+    border: 2px solid rgb(255, 255, 255);
+    outline: white;
+    border-bottom: none;
+    border-right: none;
+  }
+
+  #bell {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    position: fixed;
+    top: 5.1%;
+    right: 26%;
+    cursor: pointer;
+    background-image: url(/116389850303ufdx83go2mmx7wz9iodbnh27afxknnf9bofncviac8z2n9w4rwksenu7mwokevjmznxdga1dt7xhiquhtxbvjjjdrqb3pt5rhuk.png);
+  }
+
+  #bell::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    right: 9px;
+    top: 4px;
+    border: 2px solid #161616;
+  }
+
+  #accpfp {
+    display: flex;
+    width: 54px;
+    height: 45px;
+    position: fixed;
+    top: 5.1%;
+    right: 2%;
+    cursor: pointer;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
+  }
+
+  .cir {
+    background-color: white;
+  }
+
+  .cir.one {
+    width: 40px;
+    height: 5px;
+    transform: translate(-7px, 0px);
+  }
+
+  .cir.two {
+    width: 20px;
+    height: 5px;
+    transform: translate(19px, -12px) rotate(45deg);
+  }
+
+  .cir.three {
+    width: 23px;
+    height: 5px;
+    transform: translate(-13px, 2px) rotate(-45deg)
+  }
+
+  #accpfp.active .cir.one {
+    width: 40px;
+    height: 5px;
+    transform: translate(-3px, 0px);
+  }
+
+  #accpfp.active .cir.two {
+    width: 20px;
+    height: 5px;
+    transform: translate(-7px, -11px) rotate(-45deg)
+  }
+
+  #accpfp.active .cir.three {
+    width: 23px;
+    height: 5px;
+    transform: translate(-40px, 2px) rotate(45deg);
+  }
+
+  #options {
+    border: 5px solid white;
+    transform: rotate(45deg);
+    width: 20px;
+    height: 20px;
+    border-top: none;
+    border-left: none;
+    position: fixed;
+    top: 6%;
+    right: 18.5%;
+    cursor: pointer;
+  }
+
+  #options.active {
+    border: 5px solid white;
+    transform: rotate(223.5deg);
+    border-top: none;
+    border-left: none;
+  }
+
+  #dshbr {
+    position: absolute;
+    top: 180px;
+    left: 12%;
+    font-size: 1.8em;
+    font-weight: 600;
+  }
+
+  #moretxt {
+    position: absolute;
+    top: 230px;
+    left: 12%;
+    font-size: 1.5em;
+    opacity: 0.4;
+  }
+
+  #container {
+    background-image: url(https://assets.codepen.io/3685267/nft-dashboard-art-6.jpg);
+    width: 123%;
+    height: 260px;
+    background-size: cover;
+    border-radius: 10px;
+    position: absolute;
+    top: 338px;
+    left: 6%;
+  }
+
+  #findect {
+    font-size: 40px;
+    text-indent: 20px;
+    font-weight: bold;
+  }
+
+  #artwoect {
+    font-size: 40px;
+    text-indent: 20px;
+    font-weight: bold;
+  }
+
+  #explorebtn {
+    background-image: var(--mainBackgrounds);
+    height: 40px;
+    width: 200px;
+    font-size: 1.3em;
+    color: white;
+    font-weight: bold;
+    position: relative;
+    left: 20px;
+    top: -10px;
+    border-radius: 6px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #Market {
+    display: flex;
+    cursor: pointer;
+    font-weight: bolder;
+    position: fixed;
+    top: 17.5%;
+    font-size: 20px;
+    opacity: 0.4;
+  }
+
+  #Market.active {
+    opacity: 1;
+    border-bottom: #5500ff 3px solid;
+    text-shadow: 0 0 5px white;
+  }
+
+  #Market.active::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: -30%;
+    background-color: #5500ff;
+    width: 25px;
+    height: 38px;
+    border-radius: 7px;
+  }
+
+  #Dashboard {
+    display: inline-block;
+    position: fixed;
+    top: 26.6%;
+    font-size: 20px;
+    font-weight: bolder;
+    opacity: 0.4;
+    cursor: pointer;
+  }
+
+  #Dashboard.active {
+    opacity: 1;
+    text-shadow: 0 0 5px white;
+    border-bottom: #5500ff 3px solid;
+  }
+
+  #Dashboard.active::before {
+    content: "";
+    position: absolute;
+    left: -61%;
+    top: -30%;
+    background-color: #5500ff;
+    width: 25px;
+    height: 38px;
+    border-radius: 7px;
+  }
+
+  #Trending {
+    display: flex;
+    position: fixed;
+    top: 35.7%;
+    font-size: 20px;
+    font-weight: bolder;
+    opacity: 0.4;
+    cursor: pointer;
+  }
+
+  #Trending.active {
+    opacity: 1;
+    border-bottom: #5500ff 3px solid;
+    text-shadow: 0 0 5px white;
+  }
+
+  #Trending.active::before {
+    content: "";
+    position: absolute;
+    left: -75%;
+    top: -30%;
+    background-color: #5500ff;
+    width: 25px;
+    height: 38px;
+    border-radius: 7px;
+  }
+
+  #Collection {
+    display: flex;
+    position: fixed;
+    top: 44.8%;
+    font-size: 20px;
+    font-weight: bolder;
+    cursor: pointer;
+    opacity: 0.4;
+  }
+
+  #Collection.active {
+    opacity: 1;
+    border-bottom: #5500ff 3px solid;
+    text-shadow: 0 0 5px white;
+  }
+
+  #Collection.active::before {
+    content: "";
+    position: absolute;
+    left: -66%;
+    top: -30%;
+    background-color: #5500ff;
+    width: 25px;
+    height: 38px;
+    border-radius: 7px;
+  }
+
+  #Wallet {
+    display: flex;
+    position: fixed;
+    top: 53.9%;
+    font-size: 20px;
+    font-weight: bolder;
+    opacity: 0.4;
+    cursor: pointer;
+  }
+
+  #Wallet.active {
+    opacity: 1;
+    border-bottom: #5500ff 3px solid;
+    text-shadow: 0 0 5px white;
+  }
+
+  #Wallet.active::before {
+    content: "";
+    position: absolute;
+    left: -108%;
+    top: -30%;
+    background-color: #5500ff;
+    width: 25px;
+    height: 38px;
+    border-radius: 7px;
+  }
+
+  #settings {
+    display: none;
+    position: absolute;
+    width: 241px;
+    height: 173px;
+    background-color: rgb(44 45 78 / 57%);
+    backdrop-filter: blur(20px);
+    top: 100px;
+    right: 106px;
+    text-indent: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  #settings.active {
+    display: flex;
+    opacity: 1;
+    position: fixed;
+    z-index: 5000;
+  }
+
+  .firstsetting {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    width: 100%;
+    height: 20%;
+  }
+
+  .secondsetting {
+    position: absolute;
+    top: 41px;
+    left: 0px;
+    width: 100%;
+    height: 20%;
+  }
+
+  .thirdsetting {
+    position: absolute;
+    top: 76px;
+    left: 0px;
+    width: 100%;
+    height: 20%;
+  }
+
+  .fourthsetting {
+    position: absolute;
+    top: 109px;
+    left: 0px;
+    width: 100%;
+    height: 20%;
+  }
+
+  .fifthsetting {
+    position: absolute;
+    top: 142px;
+    left: 0px;
+    width: 100%;
+    height: 20%;
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    height: 34.6px;
+    background-color: #494949e6;
+    transform: translateY(-12px);
+    background-color: transparent;
+  }
+
+  .firsthr {
+    position: absolute;
+    top: -1px;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 0px;
+    height: 36.5px;
+  }
+
+  .firsthr:hover {
+    background-color: #ffffff1f;
+  }
+
+  .secondhr {
+    position: absolute;
+    top: 0px;
+  }
+
+  .secondhr:hover {
+    background-color: #ffffff1f;
+  }
+
+  .thirdhr {
+    position: absolute;
+    top: 0px;
+  }
+
+  .thirdhr:hover {
+    background-color: #ffffff1f;
+  }
+
+  .fourthhr {
+    position: absolute;
+    top: 0px;
+  }
+
+  .fourthhr:hover {
+    background-color: #ffffff1f;
+  }
+
+  .fifthHr {
+    position: absolute;
+    top: 0px;
+    border-bottom-right-radius: 14px;
+    border-bottom-left-radius: 14px;
+  }
+
+  .fifthHr:hover {
+    background-color: #ffffff1f;
+  }
+
+  #anything {
+    width: 250px;
+    height: 40px;
+    background-color: rgb(44 45 78 / 57%);
+    backdrop-filter: blur(20px);
+    border-top-right-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    top: 100px;
+    position: absolute;
+    right: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    display: none;
+  }
+
+  #anything.actv {
+    opacity: 1;
+    display: flex;
+    z-index: 5000000;
+    position: fixed;
+  }
+
+  .trndart {
+    position: absolute;
+    top: 580px;
+    font-size: 29px;
+    left: 12%;
+    font-weight: bold;
+  }
+
+  .first.ArtContainer {
+    position: absolute;
+    top: 76%;
+    left: 6%;
+  }
+
+  .ArtContainer {
+    width: 465px;
+    height: 400px;
+    background-color: rgb(43 43 43 / 60%);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+  }
+
+  .second.ArtContainer {
+    position: absolute;
+    top: 126%;
+    left: 6%;
+  }
+
+  .third.ArtContainer {
+    position: absolute;
+    top: 176%;
+    left: 6%;
+  }
+
+  .fourth.ArtContainer {
+    position: absolute;
+    left: 6%;
+    top: 226%;
+  }
+
+  .fifth.ArtContainer {
+    position: absolute;
+    left: 6%;
+    top: 276%;
+  }
+
+  .sixth.ArtContainer {
+    position: absolute;
+    left: 6%;
+    top: 326%;
+  }
+
+  .art {
+    width: 465px;
+    height: 205px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+  }
+
+  .art.one {
+    background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-0.jpg");
+    background-size: cover;
+  }
+
+  .art.two {
+    background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-1.jpg");
+  }
+
+  .art.three {
+    background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-2.jpg");
+  }
+
+  .art.four {
+    background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-3.jpg");
+  }
+
+  .art.five {
+    background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-4.jpg");
+  }
+
+  .art.six {
+    background-image: url("https://assets.codepen.io/3685267/nft-dashboard-art-5.jpg");
+  }
+
+  .num1cont {
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+    width: 360px;
+    height: 90px;
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    line-height: 40px;
+    text-indent: 10px;
+    font-size: 20px;
+  }
+
+  #endingcont {
+    position: absolute;
+    right: 85px;
+  }
+
+  #endingtime {
+    position: absolute;
+    right: 90px;
+    font-weight: 100;
+  }
+
+  .theimage01 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    left: -5px;
+    position: absolute;
+    top: 170px;
+  }
+
+  .txt01 {
+    font-size: 23px;
+    position: absolute;
+    left: -12px;
+    top: 100px;
+  }
+
+  .userID01 {
+    position: absolute;
+    top: 155px;
+    left: 45px;
+    font-size: 16px;
+    color: gray;
+  }
+
+  .placeBid {
+    position: absolute;
+    cursor: pointer;
+    top: 250px;
+    left: -10px;
+    width: 125px;
+    height: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid #a776fa;
+    background-image: var(--mainBackgrounds);
+    color: white;
+    font-weight: 700;
+  }
+
+  .placeBid:hover {
+    box-shadow: 0 0 20px 0px #a776fa;
+  }
+
+  .ViewArt {
+    width: 128px;
+    height: 50px;
+    top: 250px;
+    right: 5px;
+    transition: 0.5s 0s ease;
+    position: absolute;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid;
+    color: white;
+    font-weight: 700;
+    background-color: transparent;
+    border-top-color: #c026d3;
+    border-left-color: #c026d3;
+    border-bottom-color: #7c3aed;
+    border-right-color: #7c3aed;
+  }
+
+  .ViewArt:hover {
+    box-shadow: 0 0 20px 0px #8944ff;
+  }
+
+  #artists {
+    width: 45%;
+    position: fixed;
+    right: -50%;
+    top: 20%;
+    height: 102%;
+  }
+
+  #artists.active {
+    width: 50%;
+    position: fixed;
+    right: 4%;
+    top: 10%;
+    height: 90%;
+    background: #040404e6;
+    z-index: 10000;
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+  }
+
+  .artistspfps {
+    width: 60px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+  }
+
+  .artistsTag {
+    font-size: 16px;
+    color: gray;
+    position: relative;
+    bottom: 30px;
+    left: 78px;
+  }
+
+  .artistSideName {
+    position: relative;
+    bottom: 30px;
+    left: 15px;
+    font-weight: bold;
+  }
+
+  .artistnum1 {
+    background-color: #3b3b3b6b;
+    border-radius: 10px;
+    position: relative;
+    top: 6%;
+    right: -5px;
+    width: 96%;
+    margin-top: 10px;
+  }
+
+  .topArtists {
+    font-size: 26px;
+    font-weight: bold;
+    position: absolute;
+    left: 17px;
+    top: -5px;
+  }
+}
+
+.bidplaced {
+  position: fixed;
+  width: 330px;
+  height: 310px;
+  background-color: #000000ba;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  opacity: 0;
+  backdrop-filter: blur(6px);
+}
+
+.bidplaced.activated {
+  visibility: visible;
+  opacity: 1;
+}
+
+.bidinput {
+  width: 85%;
+  height: 40px;
+  background-color: #ffffff3b;
+  border-radius: 10px;
+  border: 1px solid white;
+  border-right: none;
+  border-bottom: none;
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  color: white;
+  font-size: 20px;
+  text-indent: 5%;
+  backdrop-filter: blur(10px);
+}
+
+.bidinput:focus-visible {
+  border: 2px solid white;
+  outline: none;
+}
+
+.bidinput::placeholder {
+  color: rgb(187, 187, 187);
+  text-indent: 2.5%;
+  font-size: 20px;
+}
+
+#confirming {
+  width: 130px;
+  height: 50px;
+  color: white;
+  font-size: 26px;
+  background-image: var(--mainBackgrounds);
+  border-radius: 15px;
+  border: 2px solid #e233ff;
+  border-bottom: orange;
+  border-right: orange;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+
+#confirming:hover {
+  box-shadow: 0 0 15px 2px #e233ff;
+}
+
+#canceling {
+  width: 130px;
+  height: 50px;
+  color: white;
+  font-size: 26px;
+  background-color: transparent;
+  border-radius: 15px;
+  border: 2px solid #e233ff;
+  border-bottom: 2px solid orange;
+  border-right: 2px solid orange;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+}
+
+#canceling:hover {
+  box-shadow: 0 0 15px 2px #ff6b00;
+}
+
+.msgplace {
+  position: absolute;
+  border-radius: 15px;
+  top: 40%;
+  left: 7%;
+  font-size: 20px;
+  border: 2px solid orange;
+  width: 280px;
+  text-indent: 6%;
+  color: #e233ff;
+  visibility: hidden;
+}
+
+.msgplace.perfect {
+  visibility: visible;
+}
+
+.closing {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-image: url(https://w7.pngwing.com/pngs/698/566/png-transparent-computer-icons-icon-design-close-logo-brand-material-design.png);
+}
+
+.artviewer {
+  width: 600px;
+  height: 400px;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
